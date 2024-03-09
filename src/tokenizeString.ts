@@ -1,3 +1,4 @@
+import getTokenType from './getTokenType';
 import { Token } from './types';
 
 const tokenSplitRegex = /([\s,.;:!¿?])/;
@@ -7,7 +8,7 @@ const tokenizeString = (inputText: string): Array<Token> =>
     .split(tokenSplitRegex)
     .filter(tokenString => tokenString !== '')
     .map(
-      (tokenString) => ({ value: tokenString, type: 'token_type' })
+      (tokenString) => ({ value: tokenString, type: getTokenType(tokenString) })
     );
 
 export default tokenizeString;

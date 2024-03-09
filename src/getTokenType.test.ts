@@ -54,7 +54,7 @@ const TOKEN_TYPE_CASES = [
 ];
 
 describe('#tokenizeString', () => {
-  it.each(TOKEN_TYPE_CASES)('returns right token type in case of $case', ({ value, type }) => {
+  it.each(TOKEN_TYPE_CASES)('For $case it returns right token type ', ({ value, type }) => {
     expect(getTokenType(value)).toEqual(type);
   });
 });
